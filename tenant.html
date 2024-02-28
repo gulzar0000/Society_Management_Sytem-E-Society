@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
   <title>Ballaleshwar Niwas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -59,7 +58,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="home.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
+          <li><a class="nav-link scrollto" href="about.html">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="#">Pays Dues</a></li>
           <li><a class="nav-link scrollto" href="team.html">Team</a></li>
           </li>
@@ -70,6 +69,7 @@
     </div>
   </header><!-- End Header -->
 
+
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -78,78 +78,127 @@
 
         <ol>
           <li><a href="home.html">Home</a></li>
-          <li>Inner Page</li>
+          <li>Tenant Register</li>
         </ol>
-        <h2>Inner Page</h2>
+        <h2>Tenant Registration</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <div class="container">
-      
+      <div class="container">
       <div class="row">
-        <div class="col text-center">
-          <h2>Get In Touch</h2>
-          <p>Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-            a matter of days to help you.</p>
-        </div>
-      </div>
-    </div>
-    
-  <div class="container">
-    <form action="contact.php" method="post" enctype="multipart/form-data">
-    <div class="row">
+          <h1 class="text-center py-3">Tenant Registration</h1>
       <div class="col-sm-12 col-lg-6">
       <div class="mb-3">
-        <label for="" class="form-label text">Name</label>
+        <form action="tenantregister.php" method="post" enctype="multipart/form-data">
+        <label for="" class="form-label">Tenant Name</label>
         <input type="text"
-          class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter Your Name">
+          class="form-control" name="tenantname" id="" aria-describedby="helpId" placeholder="Enter Your Name">
       </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
+      </div>
+      
+      <div class="col-sm-12 col-lg-6">
       <div class="mb-3">
         <label for="" class="form-label">Room.No</label>
         <input type="text"
           class="form-control" name="roomno" id="" aria-describedby="helpId" placeholder="Enter Your Room No.">
       </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
+      </div>
+      
+      <div class="col-sm-12 col-lg-6">
       <div class="mb-3">
         <label for="" class="form-label">Mobile No.</label>
         <input type="text"
           class="form-control" name="mobileno" id="" aria-describedby="helpId" placeholder="Enter Your Mobile No.">
       </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
+      </div>
+      
+      <div class="col-sm-12 col-lg-6">
       <div class="mb-3">
         <label for="" class="form-label">Email Id</label>
         <input type="email"
           class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Enter Your Email">
       </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <label for="" class="form-label">Subject:</label>
-      <input type="text"  class="form-control" name="subject" id="" aria-describedby="helpId" placeholder="Enter Your Subject">
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <div class="mb-3">
-        <label for="" class="form-label">Your Query/Message</label>
-        <textarea class="form-control" name="query" id="" rows="4"></textarea>
       </div>
-    </div>
+      
+      <div class="col-sm-12 col-lg-6">
+          <div class="mb-3">
+            <label for="" class="form-label">Number of Member</label>
+            <input type="number"
+              class="form-control" name="numberofmember" id="" aria-describedby="helpId" placeholder="Enter Number of Member">
+          </div>
+          </div>
+          
+          <div class="col-sm-12 col-lg-6">
+          <div class="mb-3">
+            <label for="" class="form-label">Police NOC</label>
+            <select
+              class="form-select form-select-md"
+              name="policenoc"
+              id=""
+            >
+              <option selected>Select one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          
+          </div>
 
-<input type="file" name="image" id="" class="mb-4">
+          <div class="col-sm-12 col-lg-6">
+         <div class="mb-3">
+          <label for="" class="form-label">Date From</label>
+          <input
+            type="date"
+            class="form-control"
+            name="from"
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Enter Agreement Date only</small>
+         </div>
+        </div>
+         
 
-<button style="background: #cc1616;border: 0;padding: 10px 24px;color: #fff;transition: 0.4s;" type="submit" class="btn mb-3">Submit</button>
-  </div>
-</form>
-  </div>
-
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3">
+           <label for="" class="form-label">Date To</label>
+           <input
+             type="date"
+             class="form-control"
+             name="to"
+             id=""
+             aria-describedby="helpId"
+             placeholder=""
+           />
+           <small id="helpId" class="form-text text-muted">Enter Agreement over Date only</small>
+          </div>
+         </div>
+    
+             <div class="mb-3">
+              <label for="" class="form-label">Upload Your Tenant Agreement</label>
+              <input
+                type="file"
+                class="form-control"
+                name="image"
+                id=""
+                placeholder=""
+                aria-describedby="fileHelpId"
+              />
+              <div id="fileHelpId" class="form-text">Upload Agreement and Police NOC Without NOC can't Approve Tenant Registration</div>
+             </div>
+             
+      <div class="col-sm-12 col-lg-12 form-check form-check-inline my-4">
+          <input class="form-check-input" type="checkbox" id="" value="option1">
+          <label class="form-check-label" for="">Click to continue</label>
+          <a href="#">terms and condition</a>
+        </div>
+                <button style="background: #cc1616;border: 0;padding: 10px 24px;color: #fff;transition: 0.4s;" type="submit" class="btn mb-3">Submit</button>
+      
+      </div>
+      </div>
+      </form>
 
   </main><!-- End #main -->
 
@@ -204,7 +253,7 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Search</h4>
-            <p>Search related to society information or any tabs.The search Button you reach us to website portofolio.</p>
+            <p>Search rrlated to society information or any tabs.The search Button you reach us to website portofolio.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Search">
             </form>
@@ -224,7 +273,6 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 

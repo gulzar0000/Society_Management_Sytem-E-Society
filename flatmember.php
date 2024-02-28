@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
   <title>Ballaleshwar Niwas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -78,78 +77,68 @@
 
         <ol>
           <li><a href="home.html">Home</a></li>
-          <li>Inner Page</li>
+          <li>Flat Member</li>
         </ol>
-        <h2>Inner Page</h2>
+        <h2>Flat Owner Details</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <div class="container">
-      
-      <div class="row">
-        <div class="col text-center">
-          <h2>Get In Touch</h2>
-          <p>Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-            a matter of days to help you.</p>
-        </div>
-      </div>
-    </div>
-    
-  <div class="container">
-    <form action="contact.php" method="post" enctype="multipart/form-data">
+   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label text">Name</label>
-        <input type="text"
-          class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter Your Name">
+      <h1 class="text-center">Flat Member</h1>
+      
+      
+      <?php 
+   include('config.php');
+
+   $sql="SELECT * FROM `flatmember`";
+   $result=mysqli_query($conn,$sql);
+
+   if(mysqli_num_rows($result)>0){
+
+    echo "<div
+    class='table-responsive-sm'
+  >
+    <table
+    class='table table-striped table-hover table-borderless table-primary align-middle'
+    >
+      <thead>
+        <tr>
+          <th scope='col'>ROOM NUMBER</th>
+          <th scope='col'>NAME</th>
+          <th scope='col'>CONTACT NUMBER</th>
+          <th scope='col'>ROOM TYPE</th>
+        </tr>
+      </thead>
+      <tbody>";
+
+
+
+
+      while ($rows=mysqli_fetch_assoc($result)) {
+           echo"<tr>
+              <td scope='row'>{$rows['roomno']}</td>
+              <td>{$rows['name']}</td>
+              <td>{$rows['mobileno']}</td>
+              <td>{$rows['roomtype']}</td>
+            </tr>";
+      }
+
+         echo"</tbody>
+        </table>
       </div>
     </div>
+   </div>";
 
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Room.No</label>
-        <input type="text"
-          class="form-control" name="roomno" id="" aria-describedby="helpId" placeholder="Enter Your Room No.">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Mobile No.</label>
-        <input type="text"
-          class="form-control" name="mobileno" id="" aria-describedby="helpId" placeholder="Enter Your Mobile No.">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Email Id</label>
-        <input type="email"
-          class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Enter Your Email">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <label for="" class="form-label">Subject:</label>
-      <input type="text"  class="form-control" name="subject" id="" aria-describedby="helpId" placeholder="Enter Your Subject">
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <div class="mb-3">
-        <label for="" class="form-label">Your Query/Message</label>
-        <textarea class="form-control" name="query" id="" rows="4"></textarea>
-      </div>
-    </div>
-
-<input type="file" name="image" id="" class="mb-4">
-
-<button style="background: #cc1616;border: 0;padding: 10px 24px;color: #fff;transition: 0.4s;" type="submit" class="btn mb-3">Submit</button>
-  </div>
-</form>
-  </div>
-
+   }
+   else{
+    echo "0 records found";
+   } 
+    mysqli_close($conn);
+    
+    ?>         
+   
 
   </main><!-- End #main -->
 
@@ -204,7 +193,7 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Search</h4>
-            <p>Search related to society information or any tabs.The search Button you reach us to website portofolio.</p>
+            <p>Search rrlated to society information or any tabs.The search Button you reach us to website portofolio.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Search">
             </form>
@@ -220,6 +209,7 @@
         &copy; Copyright <strong><span>Ballaleshwar Niwas 2024</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
+        
         Designed by <a href="#">T-Software Solution</a>
       </div>
     </div>

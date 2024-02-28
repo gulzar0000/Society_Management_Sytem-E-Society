@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
+  
   <title>Ballaleshwar Niwas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -78,77 +78,59 @@
 
         <ol>
           <li><a href="home.html">Home</a></li>
-          <li>Inner Page</li>
+          <li>Team</li>
         </ol>
-        <h2>Inner Page</h2>
+        <h2>Team Member</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <div class="container">
-      
-      <div class="row">
-        <div class="col text-center">
-          <h2>Get In Touch</h2>
-          <p>Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-            a matter of days to help you.</p>
-        </div>
-      </div>
-    </div>
+    <?php 
+    include('config.php');
+
+    $sql="SELECT * FROM `team`";
+    $result= mysqli_query($conn,$sql);
     
-  <div class="container">
-    <form action="contact.php" method="post" enctype="multipart/form-data">
-    <div class="row">
-      <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label text">Name</label>
-        <input type="text"
-          class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter Your Name">
+    if(mysqli_num_rows($result)>0){
+      echo " <section id='team' class='team'>
+      <div class='container'>
+
+        <div class='section-title'>
+          <span>Team</span>
+          <h2>Team</h2>
+          <p>Know to our Great team member who work together to make society happy and grateful.</p>
+        </div>      
+ ";
+
+ while ($rows=mysqli_fetch_assoc($result)) {
+  echo "<div class='row'>
+  <div class='col-lg-4 col-md-6 d-flex align-items-stretch' data-aos='zoom-in'>
+    <div class='member'>
+      <img src='queryimage/{$rows['image']}' alt=''>
+     
+      <h4>{$rows['name']}</h4>
+      <span>Chairman</span>
+      <p>
+        Dedicated leader, ensuring resident safety and comfort through efficient building management.
+      </p>
+      <div class='social'>
+        <a href=''><i class='bi bi-twitter'></i></a>
+        <a href=''><i class='bi bi-facebook'></i></a>
+        <a href=''><i class='bi bi-instagram'></i></a>
+        <a href=''><i class='bi bi-linkedin'></i></a>
       </div>
     </div>
-
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Room.No</label>
-        <input type="text"
-          class="form-control" name="roomno" id="" aria-describedby="helpId" placeholder="Enter Your Room No.">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Mobile No.</label>
-        <input type="text"
-          class="form-control" name="mobileno" id="" aria-describedby="helpId" placeholder="Enter Your Mobile No.">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3">
-        <label for="" class="form-label">Email Id</label>
-        <input type="email"
-          class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Enter Your Email">
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <label for="" class="form-label">Subject:</label>
-      <input type="text"  class="form-control" name="subject" id="" aria-describedby="helpId" placeholder="Enter Your Subject">
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-      <div class="mb-3">
-        <label for="" class="form-label">Your Query/Message</label>
-        <textarea class="form-control" name="query" id="" rows="4"></textarea>
-      </div>
-    </div>
-
-<input type="file" name="image" id="" class="mb-4">
-
-<button style="background: #cc1616;border: 0;padding: 10px 24px;color: #fff;transition: 0.4s;" type="submit" class="btn mb-3">Submit</button>
   </div>
-</form>
-  </div>
+
+  ";
+ }
+    }    
+    ?>
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
 
 
   </main><!-- End #main -->
@@ -204,7 +186,7 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Search</h4>
-            <p>Search related to society information or any tabs.The search Button you reach us to website portofolio.</p>
+            <p>Search rrlated to society information or any tabs.The search Button you reach us to website portofolio.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Search">
             </form>
@@ -220,6 +202,7 @@
         &copy; Copyright <strong><span>Ballaleshwar Niwas 2024</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
+        
         Designed by <a href="#">T-Software Solution</a>
       </div>
     </div>
